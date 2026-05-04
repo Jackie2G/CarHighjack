@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="CarHighjack.AppHost/CarHighjack.AppHost.csproj" />
+  <Project Path="CarHighjack.Application/CarHighjack.Application.csproj" />
+  <Project Path="CarHighjack.Domain/CarHighjack.Domain.csproj" />
+  <Project Path="CarHighjack.Inftastructure/CarHighjack.Inftastructure.csproj" />
+  <Project Path="CarHighjack.Presentation/CarHighjack.Presentation.csproj" />
+  <Project Path="CarHighjack.ServiceDefaults/CarHighjack.ServiceDefaults.csproj" />
+</Solution>

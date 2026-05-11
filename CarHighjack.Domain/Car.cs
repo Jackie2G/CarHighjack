@@ -5,6 +5,7 @@ namespace CarHighjack.Domain
     public class Car
     {
         [Key]
+<<<<<<< HEAD
         [Required(ErrorMessage = "VIN jest wymagany")]
         [StringLength(17, MinimumLength = 17, ErrorMessage = "VIN musi miec 17 znakow")]
         public string VIN { get; set; }
@@ -30,6 +31,16 @@ namespace CarHighjack.Domain
         [Range(1, 2000, ErrorMessage = "Moc silnika musi byc miedzy 1 a 2000 KM")]
         public int HorsePower { get; set; }
 
+=======
+        public string VIN { get; set; }
+        public string? RegistrationNumber { get; set; }
+        public string? Brand { get; set; }
+        public string? Model { get; set; }
+        public int SeatsNumber { get; set; }
+        public int Doors { get; set; }
+        public int Trunk { get; set; }
+        public int HorsePower { get; set; }
+>>>>>>> 6d57a430bec4e24f5f6160b564b83b0dc691924c
         public string? Engine { get; set; }
         public string? TyreSize { get; set; }
         public int Fuel { get; set; }

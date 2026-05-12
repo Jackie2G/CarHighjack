@@ -4,7 +4,7 @@
     <nav class="navbar">
       <div class="logo">
         <span class="logo-dot" />
-        DriveRent
+        amiFlota
       </div>
       <ul class="nav-links">
         <li><a href="#">Flota</a></li>

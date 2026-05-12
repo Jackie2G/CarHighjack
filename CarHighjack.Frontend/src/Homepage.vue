@@ -152,11 +152,26 @@ const stats: Stat[] = [
   { value: '24/7', label: 'Wsparcie' },
 ]
  
-const featuredCars: Car[] = [
-  { id: 1, model: 'Toyota Corolla', type: 'Kompakt · Benzyna', pricePerDay: 149, seats: 5, tags: ['GPS'] },
-  { id: 2, model: 'Audi A4', type: 'Sedan · Diesel · Automat', pricePerDay: 249, seats: 5, tags: ['Skóra'] },
-  { id: 3, model: 'Ford Kuga', type: 'SUV · Hybryda', pricePerDay: 199, seats: 7, tags: ['4x4'] },
-]
+import {ref, onMounted } from 'vue'
+
+const featuredCars = ref<Car[]>([])
+
+onMounted(async () => {
+  try {
+    const response = await fetch('http://localhost:5064/api/Cars')
+    const data = await response.json()
+    featuredCars.value = data.map((car: any) => ({
+      id: car.vin,
+      model: `${car.brand} ${car.model}`,
+      type: `${car.engine} · ${car.doors} drzwi`,
+      pricePerDay: 0,
+      seats: car.seatsNumber,
+      tags: []
+    }))
+  } catch (error) {
+    console.error('Błąd pobierania aut:', error)
+  }
+})
  
 const whyItems: WhyItem[] = [
   { icon: 'ti-bolt', title: 'Błyskawiczna rezerwacja', desc: 'Zarezerwuj auto w 3 minuty — bez kolejek, bez papierologii.' },

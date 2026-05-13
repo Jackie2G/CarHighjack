@@ -24,7 +24,7 @@
           sedan. Szybka rezerwacja, bez ukrytych opłat.
         </p>
         <div class="hero-buttons">
-          <button class="btn-primary">Przeglądaj flotę</button>
+          <button class="btn-primary" @click="goToAddCar">Dodaj auto</button>
           <button class="btn-outline">Jak to działa?</button>
         </div>
         <div class="hero-stats">
@@ -194,6 +194,10 @@ function handleSearch(): void {
 function handleCarSelect(car: Car): void {
   console.log('Wybrano auto:', car)
   // TODO: nawigacja do strony szczegółów / rezerwacji
+}
+
+function goToAddCar() {
+  window.dispatchEvent(new CustomEvent('navigate', { detail: 'add' }))
 }
 </script>
  
